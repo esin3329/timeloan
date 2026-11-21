@@ -18,6 +18,26 @@
 | `Space` | 대시 |
 | 좌클릭 | 사격 |
 
+## 개발
+
+Godot 4.7 이상 필요.
+
+```bash
+# 코어 회계 검증 (헤드리스, 화면 없음)
+godot --headless --path . -s res://tests/test_core.gd
+
+# 에디터로 열기
+godot --path . --editor
+```
+
+조작은 README 상단 표 참고. `project.godot` 에는 `TimeDirector`, `InputQueue` 두 autoload가 등록되어 있다.
+
+| 스크립트 | 역할 |
+|---|---|
+| `scripts/time_loan_core.gd` | 시간 대출 경제의 순수 로직 (씬 의존 없음, 테스트 대상) |
+| `scripts/time_director.gd` | 실시간 delta로 경제를 갱신하고 `Engine.time_scale` 반영 |
+| `scripts/input_queue.gd` | 게임시간 기준 예약 입력 큐 (슬롯 4개) |
+
 ## 규칙 요약
 
 > 게이지가 0 아래로 내려가면 강제 상환이 발동하고, 이자는 1.5배.
