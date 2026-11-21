@@ -19,3 +19,6 @@ Thumbs.db
 *.token
 .env
 *.key
+
+# 렌더 체크 산출물
+render_check.png
