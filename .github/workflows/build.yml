@@ -23,7 +23,10 @@ jobs:
           sudo install -m755 "Godot_v${GODOT_RELEASE}_linux.x86_64" /usr/local/bin/godot
           godot --headless --version
       - name: Logic tests
-        run: godot --headless --path . -s res://tests/test_core.gd
+        run: |
+          # class_name 심볼(.godot 캐시) 생성 — 이걸 안 하면 테스트가 TimeLoanCore를 못 찾는다
+          godot --headless --path . --import
+          godot --headless --path . -s res://tests/test_core.gd
 
   # APK 빌드 — 로컬 기기 부담 없이 클라우드에서만 수행
   android:
@@ -49,6 +52,9 @@ jobs:
             mv ./* "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable/" || true
           fi
           ls "$HOME/.local/share/godot/export_templates/${GODOT_VERSION}.stable/" | head
+
+      - name: Import project
+        run: godot --headless --path . --import
 
       - name: Export Android APK
         run: |
