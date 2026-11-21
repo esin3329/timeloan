@@ -1,5 +1,5 @@
 ; Engine configuration file.
-; Godot 4.7 — 타임론 (Time Loan) 프로토타입
+; Godot 4.7 - Time Loan prototype
 
 config_version=5
 
@@ -27,16 +27,9 @@ window/stretch/mode="canvas_items"
 [physics]
 
 common/physics_ticks_per_second=60
-2d/run_on_separate_thread=false
 
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-# Android 익스포트 필수: ETC2/ASTC VRAM 압축 임포트 활성화
 textures/vram_compression/import_etc2_astc=true
-
-[input]
-
-; 입력은 InputMap 대신 코드에서 직접 키로 읽는다 (프로토타입 단순화)
-; Shift = Borrow(대출), R = Repay(상환), Q = 예약 입력 배치
