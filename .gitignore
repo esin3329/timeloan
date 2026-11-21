@@ -1,0 +1,21 @@
+# Godot 4
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+*.translation
+
+# 빌드 산출물
+*.tmp
+*.tmp.res
+*.import
+/android/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 로컬 비밀 (이 저장소에는 절대 커밋하지 않는다)
+*.token
+.env
+*.key
