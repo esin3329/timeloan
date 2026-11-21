@@ -2,7 +2,8 @@
 .godot/
 .import/
 export.cfg
-export_presets.cfg
+# export_presets.cfg 는 CI(GitHub Actions)가 APK를 만들 때 필요하므로 저장소에 포함한다
+!export_presets.cfg
 *.translation
 
 # 빌드 산출물
