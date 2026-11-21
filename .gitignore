@@ -22,3 +22,6 @@ Thumbs.db
 
 # 렌더 체크 산출물
 render_check.png
+
+# 빌드 산출물
+build/
